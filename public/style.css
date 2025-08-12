@@ -7,6 +7,11 @@
     --accent-color: #D4AF37;
     --border-color: #444444;
     --card-bg-color: #222222;
+    --substack-orange: #FF6719;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -16,7 +21,10 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95)), url('images/moat-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -24,7 +32,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     color: var(--accent-color);
     font-weight: 700;
@@ -42,119 +50,256 @@ a {
     text-decoration: none;
 }
 
-/* --- Layout --- */
+/* --- Header & Navigation --- */
+.main-header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+}
+
+.logo {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent-color);
+}
+
+.nav-button-substack {
+    background-color: var(--substack-orange);
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-button-substack:hover {
+    opacity: 0.9;
+}
+
+
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/* === NEW: Style for the final tagline in the hero === */
+.tagline {
+    display: block;
+    margin-top: 1rem; /* Adds a little space above it */
+    font-weight: 700;
+    color: #aaa;
+}
+.hero-background-motif {
+    position: absolute;
+    top: 10%; /* === THIS IS THE ONLY LINE THAT WAS CHANGED === */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-image: url('images/hated-moats-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 45ch;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.subscriber-count {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: #aaa;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.cta-button.primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0px 0px 20px rgba(212, 175, 55, 0.3);
+}
+
+.cta-button.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 25px rgba(212, 175, 55, 0.4);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border-color: #555;
+    color: #aaa;
+    padding: 0.8rem 2rem;
+}
+
+.cta-button.secondary:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.cta-button:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.accent-link {
+    color: var(--accent-color);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(212, 175, 55, 0.5);
+    transition: text-decoration-color 0.3s ease;
+}
+
+.accent-link:hover {
+    text-decoration-color: var(--accent-color);
+}
+
+
+/* --- "What You'll Get" Section --- */
+.features-section {
+    padding: 4rem 2rem;
+    background-color: var(--card-bg-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    max-width: 35ch;
+    color: #aaa;
+}
+
+/* --- General Content Layout --- */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 4rem;
-    padding-top: 2rem;
-}
-
-section {
+.page-section {
+    padding-top: 5rem;
     margin-bottom: 4rem;
     text-align: center;
 }
 
-/* --- Components --- */
-.hook h2 {
+.page-section h2 {
     font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.hook p {
+.placeholder-text {
     font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    font-style: italic;
+    color: #888;
 }
 
-.main-cta-button {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 1rem 2.5rem;
-    border: 2px solid var(--accent-color);
-    border-radius: 4px; /* Slightly rounded corners for a modern feel */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.main-cta-button:hover {
-    background-color: transparent;
-    color: var(--accent-color);
-}
-
-.cta-subtext {
-    display: block;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: #aaa;
-}
-
-.proof-asset {
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg-color);
-    min-height: 300px;
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    border-radius: 4px;
-}
-
-.proof-asset h3 {
-    margin-bottom: 0.5rem;
-}
-
-.goodwill-cta {
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg-color);
-    padding: 2.5rem;
-    border-radius: 4px;
-}
-
-.email-form {
-    margin-top: 1.5rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    gap: 0.5rem;
-}
-
-.goodwill-cta input[type="email"] {
-    background-color: #333;
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 0.75rem;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 4px;
-}
-
-.goodwill-cta button {
-    background-color: transparent;
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
-    font-weight: 700;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 4px;
-}
-
-.goodwill-cta button:hover {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
+/* --- Footer --- */
 .footer {
     text-align: center;
     padding: 2rem;
@@ -162,3 +307,47 @@ section {
     color: #777;
     border-top: 1px solid var(--border-color);
 }
+
+/* --- Utility Components --- */
+.back-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.back-to-top-button.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero .fade-in-element:nth-child(1) { transition-delay: 0.2s; }
+.hero .fade-in-element:nth-child(2) { transition-delay: 0.4s; }
+.hero .fade-in-element:nth-child(3) { transition-delay: 0.6s; }
