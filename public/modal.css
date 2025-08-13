@@ -1,0 +1,87 @@
+/* === Newsletter Modal Styles === */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--card-bg-color);
+    padding: 3rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    animation: scaleUp 0.3s ease forwards;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: var(--text-color);
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.modal-content p {
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.modal-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.modal-form input {
+    flex-grow: 1;
+    background-color: #333;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal-form button {
+    padding: 0.75rem 1.5rem;
+    box-shadow: none;
+}
+
+/* Keyframe animations for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

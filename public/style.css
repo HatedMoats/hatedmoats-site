@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95)), url('images/moat-background.png');
+    background-image: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.90)), url('images/moat-background.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -100,6 +100,14 @@ a {
     color: var(--accent-color);
 }
 
+.main-nav a.nav-link-accent {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+.main-nav a.nav-link-accent:hover {
+    opacity: 0.8; /* Slightly fade on hover for feedback */
+}
+
 .nav-button-substack {
     background-color: var(--substack-orange);
     color: white !important;
@@ -112,24 +120,47 @@ a {
     opacity: 0.9;
 }
 
-
+.super-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #7a7a7a;
+    text-transform: uppercase;
+    letter-spacing: 18px;
+    margin-bottom: 5rem;
+    opacity: 0.4;
+}
 
 /* --- Hero Section --- */
 .hero {
-    position: relative;
     height: 90vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* This aligns content to the top */
+    padding-top: 13vh; /* NEW: Pushes the content down from the top */
     justify-content: center;
     text-align: center;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     overflow: hidden;
+}
+
+.headline-white {
+    color: #cccccc; 
+}
+
+.headline-gold {
+    color: var(--accent-color);
+}
+
+.accent-text {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 /* === NEW: Style for the final tagline in the hero === */
 .tagline {
     display: block;
-    margin-top: 1rem; /* Adds a little space above it */
+    margin-top: 5rem; /* Adds a little space above it */
     font-weight: 700;
     color: #aaa;
 }
@@ -143,7 +174,7 @@ a {
     background-image: url('images/hated-moats-logo.png');
     background-size: contain;
     background-repeat: no-repeat;
-    opacity: 0.08;
+    opacity: 0;
     z-index: 0;
 }
 
@@ -153,13 +184,13 @@ a {
 }
 
 .hero-content h2 {
-    font-size: 3.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 4.2rem;
+    margin-bottom: 5rem;
     text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     max-width: 45ch;
     margin-left: auto;
     margin-right: auto;
@@ -177,27 +208,29 @@ a {
 .hero-buttons {
     display: flex;
     justify-content: center;
+    align-items: center; /* Aligns buttons vertically */
     gap: 1rem;
-    margin-top: 2.5rem;
+    margin-top: 4rem;
 }
 
 .cta-button {
     display: inline-block;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    padding: 1rem 2.5rem;
     border: 2px solid;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
     text-align: center;
 }
 
+/* === UPDATED: Primary button is now larger === */
 .cta-button.primary {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--bg-color);
     box-shadow: 0px 0px 20px rgba(212, 175, 55, 0.3);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
 }
 
 .cta-button.primary:hover {
@@ -205,11 +238,13 @@ a {
     box-shadow: 0px 5px 25px rgba(212, 175, 55, 0.4);
 }
 
+/* === UPDATED: Secondary button is now more subtle === */
 .cta-button.secondary {
     background-color: transparent;
-    border-color: #555;
-    color: #aaa;
+    border-color: #444; /* More subtle border */
+    color: #888; /* More subtle text */
     padding: 0.8rem 2rem;
+    font-size: 1rem;
 }
 
 .cta-button.secondary:hover {
@@ -237,7 +272,7 @@ a {
 
 /* --- "What You'll Get" Section --- */
 .features-section {
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     background-color: var(--card-bg-color);
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
@@ -247,19 +282,34 @@ a {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
-    color: #888;
+    font-size: 1.1rem;
+    color: #999;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem; /* Increased space */
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
-    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem; /* Increased space */
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.feature-item {
+    flex-basis: 330px; /* Base width for each card */
+    text-align: center;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
 }
 
 .feature-item h4 {
@@ -273,6 +323,11 @@ a {
     font-size: 1rem;
     max-width: 35ch;
     color: #aaa;
+}
+
+/* Add this new rule */
+.feature-item .accent-title {
+    color: var(--accent-color);
 }
 
 /* --- General Content Layout --- */
@@ -351,3 +406,98 @@ a {
 .hero .fade-in-element:nth-child(1) { transition-delay: 0.2s; }
 .hero .fade-in-element:nth-child(2) { transition-delay: 0.4s; }
 .hero .fade-in-element:nth-child(3) { transition-delay: 0.6s; }
+
+/* === NEW: Dedicated CTA Section === */
+.cta-section {
+    padding: 4rem 2rem;
+    background-color: var(--bg-color); /* Matches the main background for a seamless feel */
+    text-align: center;
+}
+
+.cta-section h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+}
+
+.cta-section p {
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+.inline-form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.inline-form input {
+    background-color: #333;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.inline-form button {
+    padding: 0.75rem 1.5rem;
+    box-shadow: none;
+}
+
+/* === NEW: Slide-in CTA Styles === */
+.slide-in-cta {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 350px;
+    z-index: 999;
+
+    /* Hide by default */
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.slide-in-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.slide-in-cta h4 {
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.slide-in-cta p {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.slide-in-cta .inline-form {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.slide-in-cta .inline-form button {
+    padding: 0.7rem;
+}
+
+.close-button-slide-in {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

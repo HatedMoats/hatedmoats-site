@@ -12,7 +12,6 @@
     <meta property="og:title" content="Hated Moats | Contrarian Investment Analysis">
     <meta property="og:description" content="Accurate, evidence-driven breakdowns of great businesses temporarily out of market's favor.">
     <meta property="og:image" content="https://www.hatedmoats.com/images/social-preview.png">
-
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.hatedmoats.com/">
     <meta property="twitter:title" content="Hated Moats | Contrarian Investment Analysis">
@@ -20,6 +19,7 @@
     <meta property="twitter:image" content="https://www.hatedmoats.com/images/social-preview.png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css"> 
 </head>
 <body>
 
@@ -31,10 +31,12 @@
         </div>
         <nav class="main-nav">
              <ul>
+                <li><a href="https://hatedmoats.substack.com" target="_blank" class="nav-button-substack">Substack</a></li>
                 <li><a href="#analyses">Analyses</a></li>
                 <li><a href="#features">What You'll Get</a></li>
+                <li><a href="#mri" class="nav-link-accent">MRI™</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#mri">MRI™</a></li>
+                <li><a href="#portfolio">My Portfolio</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
@@ -43,20 +45,19 @@
     <main>
         <section class="hero" id="home">
             <div class="hero-background-motif"></div>
-            
             <div class="hero-content">
-                <h2 class="fade-in-element">Markets Panic. We Prepare.</h2>
-                
+                <p class="super-title fade-in-element">HATED MOATS</p>
+                <h2 class="fade-in-element">
+                     <span class="headline-white">Markets Panic.</span> <span class="headline-gold">We Prepare.</span>
+                </h2>
                 <p class="fade-in-element hero-subtitle">
                     Weekly Market Insights. Bi-weekly Deep Dives.
                     <br>
-                    The <a href="#mri" class="accent-link">Moat Resilience Index™</a>. <span class="tagline">Your new edge in investing.</span>
-                    </p>
-
-                
+                    The <a href="#mri" class="accent-link">Moat Resilience Index™</a>. <span class="tagline">Your new <span class="accent-text">edge</span> in investing.</span>
+                </p>
                 <div class="hero-buttons fade-in-element">
-                    <a href="[YOUR_NEWSLETTER_LINK_HERE]" class="cta-button primary">Get the newsletter</a>
-                    <a href="[YOUR_X_PROFILE_LINK_HERE]" target="_blank" class="cta-button secondary">Follow on X</a>
+                    <a href="#" id="open-modal-btn" class="cta-button primary">Get the newsletter</a>
+                    <a href="https://x.com/HatedMoats" target="_blank" class="cta-button secondary">Follow on X</a>
                 </div>
             </div>
         </section>
@@ -66,18 +67,31 @@
                 <h3 class="section-subtitle">WHAT YOU'LL GET</h3>
                 <div class="features-grid">
                     <div class="feature-item">
-                        <h4>Weekly Deep Dives</h4>
-                        <p>In-depth, institutional-grade analysis on one misunderstood, high-quality company sent every Sunday.</p>
+                        <h4>Hated Moat Deep Dives</h4>
+                        <p>Every other week, we go deep on one high-quality, misunderstood company with a fortress-like moat, revealing its true value.</p>
                     </div>
                     <div class="feature-item">
-                        <h4>The Moat Resilience Index™</h4>
-                        <p>Access to our proprietary metric for scoring a company's competitive advantage and long-term durability.</p>
+                        <h4>Signal From The Noise</h4>
+                        <p>Every Sunday, cut through the noise with a concise summary of the key market events and what they mean for prepared investors.</p>
                     </div>
                     <div class="feature-item">
-                        <h4>Actionable Insights</h4>
-                        <p>Clear, concise takeaways and valuation models so you can make informed decisions. No fluff.</p>
+                        <h4 class="accent-title">The Moat Resilience Index™</h4>
+                        <p>Our proprietary framework for quantifying a company's moat. We score its competitive advantage and long-term durability so you can invest with confidence.</p>
                     </div>
                 </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cta-section" class="cta-section">
+            <div class="container">
+                <h3>Ready to build a fortress for your portfolio?</h3>
+                <p>Join 70+ serious investors and get our insights delivered directly to your inbox.</p>
+                <form action="https://formspree.io/f/manbkyqo" method="POST" class="inline-form formspree-form">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <button type="submit" class="cta-button primary">Join Us</button>
+                </form>
+                <div class="form-success-message" style="display: none;">Thank you! You are now one of us!</div>
             </div>
         </section>
 
@@ -86,17 +100,18 @@
                 <h2>Featured Analyses</h2>
                 <p class="placeholder-text">The moat is strong but this part of the castle is currently being built. See you here soon!</p>
             </section>
-            
             <section id="philosophy" class="page-section fade-in-element">
                 <h2>Investment Philosophy</h2>
                 <p class="placeholder-text">The moat is strong but this part of the castle is currently being built. See you here soon!</p>
             </section>
-            
             <section id="mri" class="page-section fade-in-element">
                 <h2>Moat Resilience Index™</h2>
                 <p class="placeholder-text">The moat is strong but this part of the castle is currently being built. See you here soon!</p>
             </section>
-            
+            <section id="portfolio" class="page-section fade-in-element">
+                <h2>My Portfolio</h2>
+                <p class="placeholder-text">The moat is strong but this part of the castle is currently being built. See you here soon!</p>
+            </section>
             <section id="about" class="page-section fade-in-element">
                 <h2>About Me</h2>
                 <p class="placeholder-text">The moat is strong but this part of the castle is currently being built. See you here soon!</p>
@@ -108,29 +123,143 @@
          <p>&copy; 2025 Hated Moats. All Rights Reserved. Not financial advice.</p>
     </footer>
 
+    <div id="newsletter-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <div class="form-view">
+                <h3>Become a Hated Moats Insider</h3>
+                <p>Get our weekly market insights and bi-weekly deep dives delivered directly to your inbox. No noise, just signal.</p>
+                <form id="newsletter-form" action="https://formspree.io/f/manbkyqo" method="POST" class="modal-form formspree-form">
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                    <button type="submit" class="cta-button primary">Join Us</button>
+                </form>
+            </div>
+            <div class="thank-you-view" style="display: none;">
+                <h3>Thank you!</h3>
+                <p>Get ready. You'll be hearing from us soon.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="slide-in-cta" class="slide-in-cta">
+        <button class="close-button-slide-in">&times;</button>
+        <div class="form-container">
+            <h4>Don't Miss Out</h4>
+            <p>Get our next deep dive delivered to your inbox.</p>
+            <form action="https://formspree.io/f/manbkyqo" method="POST" class="inline-form formspree-form">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button primary">Join Us</button>
+            </form>
+            <div class="form-success-message" style="display: none;">Thank you! You are one of us now!</div>
+        </div>
+    </div>
+
     <a href="#home" class="back-to-top-button" aria-label="Scroll to top">↑</a>
 
     <script>
-        const toTopButton = document.querySelector('.back-to-top-button');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) { toTopButton.classList.add('visible'); } 
-            else { toTopButton.classList.remove('visible'); }
-        });
-    </script>
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Optional: Stop observing after it's visible
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Back to Top Button Logic ---
+            const toTopButton = document.querySelector('.back-to-top-button');
+            if (toTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) { toTopButton.classList.add('visible'); } 
+                    else { toTopButton.classList.remove('visible'); }
+                });
+            }
 
-        const elementsToAnimate = document.querySelectorAll('.fade-in-element');
-        elementsToAnimate.forEach((el) => observer.observe(el));
+            // --- Scroll Animation Logic ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            const elementsToAnimate = document.querySelectorAll('.fade-in-element');
+            elementsToAnimate.forEach((el) => observer.observe(el));
+
+            // --- Main Modal Logic ---
+            const modal = document.getElementById('newsletter-modal');
+            const openBtn = document.getElementById('open-modal-btn');
+            const closeBtn = document.querySelector('#newsletter-modal .close-button');
+            
+            const openModal = () => {
+                if(modal) {
+                    const formView = modal.querySelector('.form-view');
+                    const thankYouView = modal.querySelector('.thank-you-view');
+                    if(formView) formView.style.display = 'block';
+                    if(thankYouView) thankYouView.style.display = 'none';
+                    modal.style.display = 'flex';
+                }
+            };
+            const closeModal = () => {
+                if(modal) modal.style.display = 'none';
+            };
+
+            if (openBtn) openBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+            if (modal) window.addEventListener('click', (e) => { if (e.target == modal) closeModal(); });
+            
+
+            // --- Slide-in CTA Logic ---
+            const slideInCTA = document.getElementById('slide-in-cta');
+            const closeSlideInBtn = document.querySelector('.close-button-slide-in');
+
+            if(slideInCTA) {
+                const showSlideIn = () => {
+                    let hasBeenShown = sessionStorage.getItem('slideInShown') === 'true';
+                    let scrollPercentage = (window.scrollY / (document.body.offsetHeight - window.innerHeight)) * 100;
+                    
+                    if (scrollPercentage > 50 && !hasBeenShown) {
+                        slideInCTA.classList.add('visible');
+                        sessionStorage.setItem('slideInShown', 'true');
+                    }
+                };
+                const hideSlideIn = () => { slideInCTA.classList.remove('visible'); };
+                window.addEventListener('scroll', showSlideIn);
+                if(closeSlideInBtn) closeSlideInBtn.addEventListener('click', hideSlideIn);
+            }
+
+            // --- UNIVERSAL Form Submission Logic ---
+            const allForms = document.querySelectorAll('.formspree-form');
+            allForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const action = form.getAttribute('action');
+                    
+                    fetch(action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(response => {
+                        if (response.ok) {
+                            if (form.id === 'newsletter-form') { // This is the modal form
+                                const formView = form.closest('.form-view');
+                                const thankYouView = form.closest('.modal-content').querySelector('.thank-you-view');
+                                if(formView) formView.style.display = 'none';
+                                if(thankYouView) thankYouView.style.display = 'block';
+                                setTimeout(closeModal, 5000);
+                            } else { // This is an inline form
+                                const formContainer = form.parentElement;
+                                const successMessage = formContainer.querySelector('.form-success-message');
+                                if (successMessage) {
+                                    form.style.display = 'none';
+                                    successMessage.style.display = 'block';
+                                }
+                            }
+                            form.reset();
+                        } else {
+                            alert("Oops! There was a problem submitting your form.");
+                        }
+                    }).catch(error => {
+                        alert("Oops! There was a problem submitting your form.");
+                    });
+                });
+            });
+        });
     </script>
 
 </body>
